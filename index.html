@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OceanWatch — Demo Prototype</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Simple Icons (optional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🌊 OceanWatch — Citizen Pulse (Demo)</div>
+    <div class="actions">
+      <button id="exportCsvBtn">Export CSV</button>
+      <button id="simulateAlertBtn">Simulate Priority Alert</button>
+    </div>
+  </header>
+
+  <main class="grid">
+    <!-- Left column: Reporting form + Crisis Room -->
+    <section class="panel" id="left-panel">
+      <h3>Report Hazard</h3>
+      <form id="reportForm">
+        <label>Report Type
+          <select id="hazardType">
+            <option>Tsunami</option>
+            <option>High Waves</option>
+            <option>Flooding</option>
+            <option>Erosion</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <label>Description
+          <textarea id="reportText" rows="3" placeholder="Describe what you see..."></textarea>
+        </label>
+
+        <label>Attach Image (optional)
+          <input type="file" id="reportImage" accept="image/*" />
+        </label>
+
+        <div class="row">
+          <label>Use Current Location
+            <input type="checkbox" id="useLocation" checked />
+          </label>
+
+          <button type="submit" id="submitReport">Submit</button>
+        </div>
+
+        <div class="voice-row">
+          <button type="button" id="voiceBtn"><i class="fa fa-microphone"></i> Voice Report</button>
+          <small id="voiceStatus">(click to record — demo stub)</small>
+        </div>
+      </form>
+
+      <hr />
+
+      <h3>Crisis Room (Event Chat)</h3>
+      <div id="crisisRoom" class="chatbox">
+        <div id="chatMessages"></div>
+        <div class="chatInput">
+          <input id="chatText" placeholder="Type message to Crisis Room..." />
+          <button id="sendChat">Send</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Middle column: Map -->
+    <section class="panel map-panel">
+      <h3>Live Map & Hotspots</h3>
+      <div id="map" style="height:480px;"></div>
+      <div class="map-legend">
+        <span class="legend-item hot">Hotspot</span>
+        <span class="legend-item rpt">Report</span>
+        <span class="legend-item safe">Safe Zone</span>
+      </div>
+    </section>
+
+    <!-- Right column: Analytics & Social feed -->
+    <section class="panel" id="right-panel">
+      <h3>Dashboard Insights</h3>
+      <canvas id="trendChart" height="200"></canvas>
+
+      <h4>Social Feed (simulated)</h4>
+      <div id="socialFeed" class="feed"></div>
+
+      <h4>Priority Alerts</h4>
+      <div id="alerts" class="alerts"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Built for demo — adapt for SIH submission.
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

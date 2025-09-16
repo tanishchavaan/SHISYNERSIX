@@ -1,0 +1,46 @@
+:root{
+  --bg:#f5f7fb;
+  --card:#ffffff;
+  --accent:#0077b6;
+  --danger:#d62828;
+  --muted:#6b7280;
+}
+
+*{box-sizing:border-box;font-family:Inter,Segoe UI,Arial,Helvetica,sans-serif}
+body{margin:0;background:var(--bg);color:#111}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:linear-gradient(90deg,#006494,#008fd6);color:#fff}
+.topbar .brand{font-weight:700}
+.topbar .actions button{margin-left:8px;padding:8px 10px;border-radius:6px;border:none;background:rgba(255,255,255,0.12);color:#fff;cursor:pointer}
+
+.grid{display:grid;grid-template-columns:320px 1fr 360px;gap:16px;padding:18px}
+.panel{background:var(--card);border-radius:10px;padding:14px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+.map-panel{display:flex;flex-direction:column;gap:10px}
+
+form label{display:block;margin-bottom:8px;font-size:14px}
+form select, textarea, input[type="text"], input[type="file"]{width:100%;padding:8px;border:1px solid #e5e7eb;border-radius:6px;background:#fff}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+#submitReport{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+
+.chatbox{border:1px solid #eef2f7;padding:8px;border-radius:8px;display:flex;flex-direction:column;height:200px}
+#chatMessages{flex:1;overflow:auto;padding:8px}
+.chatInput{display:flex;gap:8px;margin-top:8px}
+.chatInput input{flex:1;padding:8px;border-radius:6px;border:1px solid #ddd}
+.chatInput button{padding:8px 10px;border-radius:6px;border:none;background:#0077b6;color:#fff}
+
+.feed{height:160px;overflow:auto;border:1px solid #f0f3f6;padding:8px;border-radius:6px}
+.alerts{min-height:60px;border:1px dashed #ffd7d7;padding:8px;border-radius:6px}
+
+.footer{padding:10px;text-align:center;color:var(--muted);font-size:13px}
+
+/* legend */
+.map-legend{display:flex;gap:12px;margin-top:8px}
+.legend-item{padding:6px 8px;border-radius:6px;font-size:12px}
+.legend-item.hot{background:#ffddd2}
+.legend-item.rpt{background:#dbeafe}
+.legend-item.safe{background:#d1fae5}
+
+/* responsive */
+@media (max-width:1000px){
+  .grid{grid-template-columns:1fr; padding:12px}
+  .map-panel{order:1}
+}
