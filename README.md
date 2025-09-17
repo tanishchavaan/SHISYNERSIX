@@ -1,5 +1,5 @@
 # Integrarted Platform for Crowdsourcing Ocean Hazard Reporting and Social Media Analytics
-# We have also used lovable to see how the front end looks .Click on https://oceanwatch-citizen-pulse.lovable.app to understand our vision
+ We have also used lovable to see how the front end looks .Click on https://oceanwatch-citizen-pulse.lovable.app to understand our vision
 ### Built with support from INCOIS (Indian National Centre for Ocean Information Services)
 
 ---
